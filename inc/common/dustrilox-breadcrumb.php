@@ -82,18 +82,17 @@ function dustrilox_breadcrumb_func()
         <!-- page title area start -->
 
         <!-- slider-area-start  -->
-        <section class="page__title-area page__title-height page__title-overlay d-flex align-items-center" data-background="<?php echo get_template_directory_uri() ?>/assets/img/bg/page-bg.jpg">
+        <section class="page__title-area page__title-height page__title-overlay d-flex align-items-center <?php print esc_attr($breadcrumb_class); ?>" data-background="<?php print esc_attr($bg_img); ?>">
             <div class="container">
                 <div class="row">
                     <div class="col-xxl-12">
                         <div class="page__title-wrapper mt-100">
                             <div class="breadcrumb-menu">
-                                <ul>
-                                    <li><a href="index.html">Home</a></li>
-                                    <li><span>About Us</span></li>
-                                </ul>
+                                <?php if (function_exists('bcn_display')) {
+                                            bcn_display();
+                                        } ?>
                             </div>
-                            <h3 class="page__title mt-20">About Company</h3>
+                            <h3 class="page__title mt-20"><?php echo wp_kses($title, wp_kses_allowed_html('post'))  ?></h3>
                         </div>
                     </div>
                 </div>
@@ -130,6 +129,26 @@ function dustrilox_breadcrumb_func()
     function dustrilox_search_form()
     {
         ?>
+
+
+    <div class="modal fade" id="search-modal" tabindex="-1" role="dialog" aria-hidden="true">
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+        </button>
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <form method="get" action="<?php print esc_url(home_url('/')); ?>">
+                    <input type="search" name="s" value="<?php print esc_attr(get_search_query()) ?>" placeholder="<?php print esc_attr__('Enter Your Keyword', 'dustrilox'); ?>">
+                    <button type="submit" class="search-btn"><i class="far fa-search"></i></button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+
+<!-- 
     <div class="search-wrapper p-relative transition-3 d-none">
         <div class="search-form transition-3">
             <form method="get" action="<?php print esc_url(home_url('/')); ?>">
@@ -138,7 +157,7 @@ function dustrilox_breadcrumb_func()
             </form>
             <a href="javascript:void(0);" class="search-close"><i class="far fa-times"></i></a>
         </div>
-    </div>
+    </div> -->
 <?php
 }
 

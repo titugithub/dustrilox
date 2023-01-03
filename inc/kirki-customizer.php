@@ -289,7 +289,7 @@ function _header_top_fields($fields)
         'settings' => 'dustrilox_address',
         'label'    => esc_html__('Address', 'dustrilox'),
         'section'  => 'header_top_setting',
-        'default'  => esc_html__('Moon ave, New York, 2020 NY US', 'dustrilox'),
+        'default'  => esc_html__('16/A, New York, US', 'dustrilox'),
         'priority' => 10,
     ];
 
@@ -299,6 +299,38 @@ function _header_top_fields($fields)
         'label'    => esc_html__('Address URL', 'dustrilox'),
         'section'  => 'header_top_setting',
         'default'  => esc_html__('https://goo.gl/maps/qzqY2PAcQwUz1BYN9', 'dustrilox'),
+        'priority' => 10,
+    ];
+    $fields[] = [
+        'type'     => 'text',
+        'settings' => 'dustrilox_feed',
+        'label'    => esc_html__('Feed', 'dustrilox'),
+        'section'  => 'header_top_setting',
+        'default'  => esc_html__('Our Company is one of the', 'dustrilox'),
+        'priority' => 10,
+    ];
+    $fields[] = [
+        'type'     => 'text',
+        'settings' => 'dustrilox_delivery',
+        'label'    => esc_html__('delivery', 'dustrilox'),
+        'section'  => 'header_top_setting',
+        'default'  => esc_html__('Deliver the sustainable success', 'dustrilox'),
+        'priority' => 10,
+    ];
+    $fields[] = [
+        'type'     => 'text',
+        'settings' => 'dustrilox_delivery_link',
+        'label'    => esc_html__('delivery link', 'dustrilox'),
+        'section'  => 'header_top_setting',
+        'default'  => esc_html__('#', 'dustrilox'),
+        'priority' => 10,
+    ];
+    $fields[] = [
+        'type'     => 'textarea',
+        'settings' => 'dustrilox_top_menu',
+        'label'    => esc_html__('delivery link', 'dustrilox'),
+        'section'  => 'header_top_setting',
+        'default'  => esc_html__('Top Menu Set', 'dustrilox'),
         'priority' => 10,
     ];
 
